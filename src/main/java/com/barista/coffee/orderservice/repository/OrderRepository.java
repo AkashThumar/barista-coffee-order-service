@@ -11,4 +11,6 @@ public interface OrderRepository extends CrudRepository<Order, Long> {
 
 	@Query(nativeQuery = true, value = "select nextval('coffee_shop.order_number_seq')")
 	public Long getOrderNumber();
+	
+	public Order findByNumber(Long number);
 }
